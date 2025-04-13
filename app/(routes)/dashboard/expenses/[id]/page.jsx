@@ -74,13 +74,13 @@ function ExpensesScreen({ params }) {
   const deleteBudget = async () => {
     const deleteExpenseResult = await db
       .delete(Expenses)
-      .where(eq(Expenses.budgetId, params.id))
+      .where(eq(Expenses.budgetId, id))
       .returning();
 
     if (deleteExpenseResult) {
       const result = await db
         .delete(Budgets)
-        .where(eq(Budgets.id, params.id))
+        .where(eq(Budgets.id, id))
         .returning();
     }
     toast("Budget Deleted !");
