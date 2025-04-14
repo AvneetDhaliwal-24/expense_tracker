@@ -22,8 +22,8 @@ function CreateIncomes({ refreshData }) {
   const [emojiIcon, setEmojiIcon] = useState("😀");
   const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
 
-  const [name, setName] = useState();
-  const [amount, setAmount] = useState();
+  const [name, setName] = useState("");
+  const [amount, setAmount] = useState("");
 
   const { user } = useUser();
 
